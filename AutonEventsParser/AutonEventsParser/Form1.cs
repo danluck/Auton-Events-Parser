@@ -16,5 +16,15 @@ namespace AutonEventsParser
         {
             InitializeComponent();
         }
+
+        private void buttonDeserialize_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/danluck/Auton-Events-Parser");
+        }
     }
 }
