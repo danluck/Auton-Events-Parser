@@ -21,7 +21,7 @@ namespace AutonEventsParser
         {
             var deserializer = new Deserializer();
 
-            labelByteLength.Text = deserializer.GetByteArrayFromHexText(
+            labelByteLength.Text = deserializer.GetByteArrayLength(
                 richTextBoxInput.Text).ToString();
         }
 

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AutonEventsParser
 {
-    class Deserializer
+    public class Deserializer
     {
-        public UInt32 GetByteArrayFromHexText(String input)
+        public UInt32 GetByteArrayLength(String input)
         {
             UInt32 length = (uint)(input.Length / 2);
             return length;
