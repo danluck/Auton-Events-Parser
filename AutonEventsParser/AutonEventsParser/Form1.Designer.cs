@@ -32,9 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonDeserialize = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonHelp = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.labelByteLength = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonHelp = new System.Windows.Forms.Button();
+            this.richTextBoxOutput = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +78,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Output";
             // 
+            // labelByteLength
+            // 
+            this.labelByteLength.AutoSize = true;
+            this.labelByteLength.Location = new System.Drawing.Point(69, 22);
+            this.labelByteLength.Name = "labelByteLength";
+            this.labelByteLength.Size = new System.Drawing.Size(13, 17);
+            this.labelByteLength.TabIndex = 1;
+            this.labelByteLength.Text = "-";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Length:";
+            // 
             // buttonHelp
             // 
             this.buttonHelp.Location = new System.Drawing.Point(359, 406);
@@ -88,29 +107,20 @@
             this.buttonHelp.UseVisualStyleBackColor = true;
             this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
-            // label2
+            // richTextBoxOutput
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Length:";
-            // 
-            // labelByteLength
-            // 
-            this.labelByteLength.AutoSize = true;
-            this.labelByteLength.Location = new System.Drawing.Point(69, 22);
-            this.labelByteLength.Name = "labelByteLength";
-            this.labelByteLength.Size = new System.Drawing.Size(13, 17);
-            this.labelByteLength.TabIndex = 1;
-            this.labelByteLength.Text = "-";
+            this.richTextBoxOutput.Location = new System.Drawing.Point(468, 29);
+            this.richTextBoxOutput.Name = "richTextBoxOutput";
+            this.richTextBoxOutput.Size = new System.Drawing.Size(294, 314);
+            this.richTextBoxOutput.TabIndex = 5;
+            this.richTextBoxOutput.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 447);
+            this.Controls.Add(this.richTextBoxOutput);
             this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonDeserialize);
@@ -134,6 +144,7 @@
         private System.Windows.Forms.Button buttonHelp;
         private System.Windows.Forms.Label labelByteLength;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RichTextBox richTextBoxOutput;
     }
 }
 

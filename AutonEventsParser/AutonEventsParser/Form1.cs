@@ -21,8 +21,11 @@ namespace AutonEventsParser
         {
             var deserializer = new Deserializer();
 
+            var inputString = richTextBoxInput.Text;
             labelByteLength.Text = deserializer.GetByteArrayLength(
-                richTextBoxInput.Text).ToString();
+                inputString).ToString();
+
+            richTextBoxOutput.Text = deserializer.FindEventClassId(inputString);
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)

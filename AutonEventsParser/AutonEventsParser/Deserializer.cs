@@ -23,6 +23,14 @@ namespace AutonEventsParser
             return length;
         }
 
+        public String FindEventClassId(String input)
+        {
+            if (GetByteArrayLength(input) == 0)
+                return "No hex data";
+
+            return "";
+        }
+
         public byte[] StringToByteArray(String hex)
         {
             int NumberChars = hex.Length;
