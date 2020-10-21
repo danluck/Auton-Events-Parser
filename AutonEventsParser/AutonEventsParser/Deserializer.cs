@@ -10,6 +10,15 @@ namespace AutonEventsParser
     {
         public UInt32 GetByteArrayLength(String input)
         {
+            try
+            {
+                var bytes = StringToByteArray(input);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Exception = '{e}'");
+                return 0;
+            }
             UInt32 length = (uint)(input.Length / 2);
             return length;
         }
