@@ -7,11 +7,21 @@ namespace UnitTestProjectAutonEventsParser
     public class UnitTestDeserializer
     {
         [TestMethod]
-        public void GetByteArrayLength()
+        public void GetByteArrayLengthEmpty()
         {
             var deserializer = new AutonEventsParser.Deserializer();
 
             var result = deserializer.GetByteArrayLength("");
+            var expected = (uint)0;
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void GetByteArrayLengthNotHexCode()
+        {
+            var deserializer = new AutonEventsParser.Deserializer();
+
+            var result = deserializer.GetByteArrayLength("#&");
             var expected = (uint)0;
             Assert.AreEqual(expected, result);
         }
