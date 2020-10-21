@@ -19,7 +19,10 @@ namespace AutonEventsParser
 
         private void buttonDeserialize_Click(object sender, EventArgs e)
         {
+            var deserializer = new Deserializer();
 
+            labelByteLength.Text = deserializer.GetByteArrayLength(
+                richTextBoxInput.Text).ToString();
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)
