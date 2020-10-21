@@ -8,6 +8,13 @@ namespace AutonEventsParser
 {
     public class Deserializer
     {
+        private struct AObject
+        {
+            UInt16 ClassId;
+        };
+
+        private const UInt16 EVENT_START = 19007;
+
         public UInt32 GetByteArrayLength(String input)
         {
             try
@@ -25,9 +32,17 @@ namespace AutonEventsParser
 
         public String FindEventClassId(String input)
         {
-            if (GetByteArrayLength(input) == 0)
+            var length = GetByteArrayLength(input);
+            if (length == 0)
                 return "No hex data";
 
+            int minSize = System.Runtime.InteropServices.Marshal.SizeOf(typeof(AObject));
+            if (length < minSize)
+            {
+                return "At least 2 bytes required";
+            }
+
+            var bytes = StringToByteArray(input);
             return "";
         }
 
