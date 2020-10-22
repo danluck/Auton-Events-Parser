@@ -22,15 +22,22 @@ namespace AutonEventsParser
             var deserializer = new Deserializer();
 
             var inputString = richTextBoxInput.Text;
+            var inputDataFormat = radioButtonIsHex.Checked ? 
+                InputDataFormats.Hex : InputDataFormats.Decimal;
             labelByteLength.Text = deserializer.GetByteArrayLength(
-                inputString).ToString();
+                inputString, inputDataFormat).ToString();
 
-            richTextBoxOutput.Text = deserializer.FindEventClassId(inputString);
+            richTextBoxOutput.Text = deserializer.FindEventClassId(inputString, inputDataFormat);
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/danluck/Auton-Events-Parser");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            radioButtonIsHex.Checked = true;
         }
     }
 }

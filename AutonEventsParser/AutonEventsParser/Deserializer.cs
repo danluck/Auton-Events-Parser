@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace AutonEventsParser
 {
+    public enum InputDataFormats
+    {
+        Hex,
+        Decimal
+    }
+
     public class Deserializer
     {
         private struct AObject
@@ -15,7 +21,7 @@ namespace AutonEventsParser
 
         private const UInt16 EVENT_START = 19007;
 
-        public UInt32 GetByteArrayLength(String input)
+        public UInt32 GetByteArrayLength(String input, InputDataFormats inputDataFormat)
         {
             try
             {
@@ -30,9 +36,9 @@ namespace AutonEventsParser
             return length;
         }
 
-        public String FindEventClassId(String input)
+        public String FindEventClassId(String input, InputDataFormats inputDataFormat)
         {
-            var length = GetByteArrayLength(input);
+            var length = GetByteArrayLength(input, inputDataFormat);
             if (length == 0)
                 return "No hex data";
 

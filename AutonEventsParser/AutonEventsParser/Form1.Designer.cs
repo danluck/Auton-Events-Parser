@@ -36,12 +36,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonHelp = new System.Windows.Forms.Button();
             this.richTextBoxOutput = new System.Windows.Forms.RichTextBox();
+            this.radioButtonIsHex = new System.Windows.Forms.RadioButton();
+            this.radioButtonIsDecimal = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // richTextBoxInput
             // 
-            this.richTextBoxInput.Location = new System.Drawing.Point(12, 29);
+            this.richTextBoxInput.Location = new System.Drawing.Point(12, 59);
             this.richTextBoxInput.MaxLength = 65536;
             this.richTextBoxInput.Name = "richTextBoxInput";
             this.richTextBoxInput.Size = new System.Drawing.Size(450, 105);
@@ -53,13 +55,13 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.Size = new System.Drawing.Size(43, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Hex data:";
+            this.label1.Text = "Input:";
             // 
             // buttonDeserialize
             // 
-            this.buttonDeserialize.Location = new System.Drawing.Point(12, 141);
+            this.buttonDeserialize.Location = new System.Drawing.Point(12, 170);
             this.buttonDeserialize.Name = "buttonDeserialize";
             this.buttonDeserialize.Size = new System.Drawing.Size(119, 38);
             this.buttonDeserialize.TabIndex = 2;
@@ -71,9 +73,9 @@
             // 
             this.groupBox1.Controls.Add(this.labelByteLength);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(15, 195);
+            this.groupBox1.Location = new System.Drawing.Point(15, 214);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(447, 199);
+            this.groupBox1.Size = new System.Drawing.Size(447, 180);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Output";
@@ -115,11 +117,35 @@
             this.richTextBoxOutput.TabIndex = 5;
             this.richTextBoxOutput.Text = "";
             // 
+            // radioButtonIsHex
+            // 
+            this.radioButtonIsHex.AutoSize = true;
+            this.radioButtonIsHex.Location = new System.Drawing.Point(12, 29);
+            this.radioButtonIsHex.Name = "radioButtonIsHex";
+            this.radioButtonIsHex.Size = new System.Drawing.Size(53, 21);
+            this.radioButtonIsHex.TabIndex = 6;
+            this.radioButtonIsHex.TabStop = true;
+            this.radioButtonIsHex.Text = "Hex";
+            this.radioButtonIsHex.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonIsDecimal
+            // 
+            this.radioButtonIsDecimal.AutoSize = true;
+            this.radioButtonIsDecimal.Location = new System.Drawing.Point(71, 29);
+            this.radioButtonIsDecimal.Name = "radioButtonIsDecimal";
+            this.radioButtonIsDecimal.Size = new System.Drawing.Size(79, 21);
+            this.radioButtonIsDecimal.TabIndex = 7;
+            this.radioButtonIsDecimal.TabStop = true;
+            this.radioButtonIsDecimal.Text = "Decimal";
+            this.radioButtonIsDecimal.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 447);
+            this.Controls.Add(this.radioButtonIsDecimal);
+            this.Controls.Add(this.radioButtonIsHex);
             this.Controls.Add(this.richTextBoxOutput);
             this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.groupBox1);
@@ -128,6 +154,7 @@
             this.Controls.Add(this.richTextBoxInput);
             this.Name = "Form1";
             this.Text = "Auton Events Parser";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -145,6 +172,8 @@
         private System.Windows.Forms.Label labelByteLength;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox richTextBoxOutput;
+        private System.Windows.Forms.RadioButton radioButtonIsHex;
+        private System.Windows.Forms.RadioButton radioButtonIsDecimal;
     }
 }
 
