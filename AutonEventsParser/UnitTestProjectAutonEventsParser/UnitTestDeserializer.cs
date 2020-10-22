@@ -60,5 +60,37 @@ namespace UnitTestProjectAutonEventsParser
             Assert.AreEqual(expected, result);
         }
 
+        [TestMethod]
+        public void GetClassIdHexEmpty()
+        {
+            var deserializer = new AutonEventsParser.Deserializer();
+
+            var inputDataFormat = InputDataFormats.Hex;
+            var result = deserializer.GetClassId("", inputDataFormat);
+            var expected = (UInt16)0;
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void GetClassIdHexZero()
+        {
+            var deserializer = new AutonEventsParser.Deserializer();
+
+            var inputDataFormat = InputDataFormats.Hex;
+            var result = deserializer.GetClassId("0000", inputDataFormat);
+            var expected = (UInt16)0;
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void GetClassIdHexFFFF()
+        {
+            var deserializer = new AutonEventsParser.Deserializer();
+
+            var inputDataFormat = InputDataFormats.Hex;
+            var result = deserializer.GetClassId("FFFF", inputDataFormat);
+            var expected = (UInt16)0xFFFF;
+            Assert.AreEqual(expected, result);
+        }
     }
 }

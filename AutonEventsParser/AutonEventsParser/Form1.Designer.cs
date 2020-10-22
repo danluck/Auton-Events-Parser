@@ -38,12 +38,19 @@
             this.richTextBoxOutput = new System.Windows.Forms.RichTextBox();
             this.radioButtonIsHex = new System.Windows.Forms.RadioButton();
             this.radioButtonIsDecimal = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.radioButtonBigEndian = new System.Windows.Forms.RadioButton();
+            this.radioButtonLittleEndian = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // richTextBoxInput
             // 
-            this.richTextBoxInput.Location = new System.Drawing.Point(12, 59);
+            this.richTextBoxInput.Location = new System.Drawing.Point(12, 102);
             this.richTextBoxInput.MaxLength = 65536;
             this.richTextBoxInput.Name = "richTextBoxInput";
             this.richTextBoxInput.Size = new System.Drawing.Size(450, 105);
@@ -61,7 +68,7 @@
             // 
             // buttonDeserialize
             // 
-            this.buttonDeserialize.Location = new System.Drawing.Point(12, 170);
+            this.buttonDeserialize.Location = new System.Drawing.Point(12, 213);
             this.buttonDeserialize.Name = "buttonDeserialize";
             this.buttonDeserialize.Size = new System.Drawing.Size(119, 38);
             this.buttonDeserialize.TabIndex = 2;
@@ -71,11 +78,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.labelByteLength);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(15, 214);
+            this.groupBox1.Location = new System.Drawing.Point(15, 257);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(447, 180);
+            this.groupBox1.Size = new System.Drawing.Size(447, 137);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Output";
@@ -120,7 +128,7 @@
             // radioButtonIsHex
             // 
             this.radioButtonIsHex.AutoSize = true;
-            this.radioButtonIsHex.Location = new System.Drawing.Point(12, 29);
+            this.radioButtonIsHex.Location = new System.Drawing.Point(9, 21);
             this.radioButtonIsHex.Name = "radioButtonIsHex";
             this.radioButtonIsHex.Size = new System.Drawing.Size(53, 21);
             this.radioButtonIsHex.TabIndex = 6;
@@ -131,7 +139,7 @@
             // radioButtonIsDecimal
             // 
             this.radioButtonIsDecimal.AutoSize = true;
-            this.radioButtonIsDecimal.Location = new System.Drawing.Point(71, 29);
+            this.radioButtonIsDecimal.Location = new System.Drawing.Point(68, 21);
             this.radioButtonIsDecimal.Name = "radioButtonIsDecimal";
             this.radioButtonIsDecimal.Size = new System.Drawing.Size(79, 21);
             this.radioButtonIsDecimal.TabIndex = 7;
@@ -139,13 +147,66 @@
             this.radioButtonIsDecimal.Text = "Decimal";
             this.radioButtonIsDecimal.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(3, 18);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 100);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.radioButtonIsDecimal);
+            this.groupBox3.Controls.Add(this.radioButtonIsHex);
+            this.groupBox3.Location = new System.Drawing.Point(12, 29);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(165, 67);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Format:";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.radioButtonBigEndian);
+            this.groupBox4.Controls.Add(this.radioButtonLittleEndian);
+            this.groupBox4.Location = new System.Drawing.Point(194, 29);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(233, 67);
+            this.groupBox4.TabIndex = 9;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Endianness:";
+            // 
+            // radioButtonBigEndian
+            // 
+            this.radioButtonBigEndian.AutoSize = true;
+            this.radioButtonBigEndian.Location = new System.Drawing.Point(9, 40);
+            this.radioButtonBigEndian.Name = "radioButtonBigEndian";
+            this.radioButtonBigEndian.Size = new System.Drawing.Size(93, 21);
+            this.radioButtonBigEndian.TabIndex = 7;
+            this.radioButtonBigEndian.TabStop = true;
+            this.radioButtonBigEndian.Text = "BigEndian";
+            this.radioButtonBigEndian.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonLittleEndian
+            // 
+            this.radioButtonLittleEndian.AutoSize = true;
+            this.radioButtonLittleEndian.Location = new System.Drawing.Point(9, 18);
+            this.radioButtonLittleEndian.Name = "radioButtonLittleEndian";
+            this.radioButtonLittleEndian.Size = new System.Drawing.Size(103, 21);
+            this.radioButtonLittleEndian.TabIndex = 6;
+            this.radioButtonLittleEndian.TabStop = true;
+            this.radioButtonLittleEndian.Text = "LittleEndian";
+            this.radioButtonLittleEndian.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 447);
-            this.Controls.Add(this.radioButtonIsDecimal);
-            this.Controls.Add(this.radioButtonIsHex);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.richTextBoxOutput);
             this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.groupBox1);
@@ -157,6 +218,10 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,6 +239,11 @@
         private System.Windows.Forms.RichTextBox richTextBoxOutput;
         private System.Windows.Forms.RadioButton radioButtonIsHex;
         private System.Windows.Forms.RadioButton radioButtonIsDecimal;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RadioButton radioButtonBigEndian;
+        private System.Windows.Forms.RadioButton radioButtonLittleEndian;
     }
 }
 

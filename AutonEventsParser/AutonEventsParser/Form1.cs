@@ -38,6 +38,7 @@ namespace AutonEventsParser
         private void Form1_Load(object sender, EventArgs e)
         {
             radioButtonIsHex.Checked = true;
+            radioButtonLittleEndian.Checked = true;
         }
     }
 }
