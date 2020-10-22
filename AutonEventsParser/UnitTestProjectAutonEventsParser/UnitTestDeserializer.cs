@@ -66,7 +66,8 @@ namespace UnitTestProjectAutonEventsParser
             var deserializer = new AutonEventsParser.Deserializer();
 
             var inputDataFormat = InputDataFormats.Hex;
-            var result = deserializer.GetClassId("", inputDataFormat);
+            var endianness = EndiannessValue.Little;
+            var result = deserializer.GetClassId("", inputDataFormat, endianness);
             var expected = (UInt16)0;
             Assert.AreEqual(expected, result);
         }
@@ -77,7 +78,8 @@ namespace UnitTestProjectAutonEventsParser
             var deserializer = new AutonEventsParser.Deserializer();
 
             var inputDataFormat = InputDataFormats.Hex;
-            var result = deserializer.GetClassId("0000", inputDataFormat);
+            var endianness = EndiannessValue.Little;
+            var result = deserializer.GetClassId("0000", inputDataFormat, endianness);
             var expected = (UInt16)0;
             Assert.AreEqual(expected, result);
         }
@@ -88,9 +90,24 @@ namespace UnitTestProjectAutonEventsParser
             var deserializer = new AutonEventsParser.Deserializer();
 
             var inputDataFormat = InputDataFormats.Hex;
-            var result = deserializer.GetClassId("FFFF", inputDataFormat);
+            var endianness = EndiannessValue.Little;
+            var result = deserializer.GetClassId("FFFF", inputDataFormat, endianness);
             var expected = (UInt16)0xFFFF;
             Assert.AreEqual(expected, result);
         }
+
+        [TestMethod]
+        public void GetClassIdHex3F4A()
+        {
+            var deserializer = new AutonEventsParser.Deserializer();
+
+            var inputDataFormat = InputDataFormats.Hex;
+            var endianness = EndiannessValue.Little;
+            var result = deserializer.GetClassId("3F4A", inputDataFormat, endianness);
+            var expected = (UInt16)19007;
+            Assert.AreEqual(expected, result);
+        }
+
+        
     }
 }

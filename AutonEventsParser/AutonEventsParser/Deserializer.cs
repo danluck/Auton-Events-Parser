@@ -13,16 +13,35 @@ namespace AutonEventsParser
         Decimal
     }
 
+    public enum EndiannessValue
+    {
+        Little,
+        Big
+    }
+
     public class Deserializer
     {
         private struct AObject
         {
-            UInt16 ClassId;
+            public UInt16 ClassId;
         };
 
         private int AOBJECT_SIZE = System.Runtime.InteropServices.Marshal.SizeOf(typeof(AObject));
 
         private const UInt16 EVENT_START = 19007;
+
+        private struct AutonStructures
+        {
+            public UInt16 ClassId;
+            public String StructName;
+        };
+        
+        private List <AutonStructures> AutonStructure;
+
+        public Deserializer()
+        {
+            AutonStructure = new List<AutonStructures>();
+        }
 
         //3f4ae725c34c
 
@@ -57,12 +76,20 @@ namespace AutonEventsParser
             return "";
         }
 
-        public UInt16 GetClassId(String input, InputDataFormats inputDataFormat)
+        public UInt16 GetClassId(String input, InputDataFormats inputDataFormat, 
+            EndiannessValue endianness)
         {
             if (GetByteArrayLength(input, inputDataFormat) < AOBJECT_SIZE)
                 return 0;
 
-            var bytes = StringToByteArray(input, inputDataFormat);
+            if (endianness == EndiannessValue.Little &&
+                BitConverter.IsLittleEndian)
+            {
+                var bytes = StringToByteArray(input, inputDataFormat);
+                var value = BitConverter.ToUInt16(bytes, 0);
+                return value;
+            }
+            // #TODO 
             return 0;
         }
 
