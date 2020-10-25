@@ -1,2 +1,4 @@
 language: csharp
 
+script:
+    - dotnet build AutonEventsParser.sln -c Release
